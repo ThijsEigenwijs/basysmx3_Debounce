@@ -10,19 +10,19 @@ char debounce(char btn) {
 
     //Make the BTN_Value the value of the selected button
     switch (btn) {
-        case 0:
+        case bounceC:
             BTN_Value = BTNC;
             break;
-        case 1:
+        case bounceU:
             BTN_Value = BTNU;
             break;
-        case 2:
+        case bounceL:
             BTN_Value = BTNL;
             break;
-        case 3:
+        case bounceR:
             BTN_Value = BTNR;
             break;
-        case 4:
+        case bounceD:
             BTN_Value = BTND;
             break;
         default:
