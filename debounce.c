@@ -1,4 +1,4 @@
-char debounce(BTN btn) {
+char debounce(char btn) {
 
     //Make the static variables so we can store the values
     static char BTN_release[5];
@@ -10,22 +10,28 @@ char debounce(BTN btn) {
 
     //Make the BTN_Value the value of the selected button
     switch (btn) {
-        case BTN.C:
+        case 0:
             BTN_Value = BTNC;
             break;
-        case BTN.U:
+        case 1:
             BTN_Value = BTNU;
             break;
-        case BTN.L:
+        case 2:
             BTN_Value = BTNL;
             break;
-        case BTN.R:
+        case 3:
             BTN_Value = BTNR;
             break;
-        case BTN.D:
+        case 4:
             BTN_Value = BTND;
             break;
-    }
+        default:
+            break;
+    };
+
+   
+
+
 
     //If the button is pressed
     if (BTN_Value == 1) {
@@ -46,8 +52,7 @@ char debounce(BTN btn) {
             //Set the time pressed back to zero
             BTN_press[btn] = 0;
         }
-    }
-        //If the button isn't pressed
+    }        //If the button isn't pressed
     else {
         // Increase the time its released
         BTN_release[btn]++;
