@@ -17,9 +17,4 @@
 //Functions
 char debounce(char btn);
 
-void tt_button_init();
-
-
-
-
 #endif
