@@ -7,6 +7,7 @@ char debounce(char btn) {
 
     //Set a value to zero, so it only changes if its pressed
     char BTN_Value = 0;
+    char returnVal = 0;
 
     //Make the BTN_Value the value of the selected button
     switch (btn) {
@@ -38,7 +39,6 @@ char debounce(char btn) {
         //Increase the value of time that the button is pressed
         BTN_press[btn]++;
         //Make the release value 0
-        BTN_release[btn] = 0;
 
         //If the button is pressed longer then the predefined value
         if (BTN_press[btn] > BounceValue) {
@@ -66,7 +66,12 @@ char debounce(char btn) {
             BTN_release[btn] = 0;
         }
     }
+    
+    if(BTN_pressed[btn] == 1 && BTN_release[btn] != 0){
+        BTN_release[btn] = 0;
+        returnVal = 1;
+    }
 
     //Return the pressed state of the selected buttton
-    return BTN_pressed[btn];
+    return returnVal;
 }
